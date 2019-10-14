@@ -1,5 +1,5 @@
 
-public class Table {
+public class Table extends Element {
 
 	private String title;
 
@@ -16,9 +16,9 @@ public class Table {
 		this.title = title;
 	}
 
-	@Override
-	public String toString() {
-		return "Table [title=" + title + "]";
+	public void print()
+	{
+		System.out.println("Table with title: "+this.title);
 	}
 	
 }

@@ -3,9 +3,11 @@ import java.util.Vector;
 public class SubChapter {
 
 	private String title;
-	private Vector <Paragraph> pghVec = new Vector <>();
-	private Vector <Image> imgVec = new Vector <>();
-	private Vector <Table> tableVec = new Vector <>();
+//	private Vector <Paragraph> pghVec = new Vector <>();
+//	private Vector <Image> imgVec = new Vector <>();
+//	private Vector <Table> tableVec = new Vector <>();
+	private Vector <Element> elemVec = new Vector <>();
+	
 	
 	public SubChapter(String title) {
 		super();
@@ -20,30 +22,51 @@ public class SubChapter {
 		this.title = title;
 	}
 
-	@Override
-	public String toString() {
-		return "SubChapter [title=" + title + "]";
+	public void print()
+	{
+		System.out.println("SubChapter title: " + this.title);
+		
+//		for(Paragraph itp : pghVec)
+//		{
+//			itp.print();
+//		}
+//		
+//		for(Image iti : imgVec)
+//		{
+//			iti.print();
+//		}
+//		
+//		for(Table itT : tableVec)
+//		{
+//			itT.print();
+//		}
+		
+		for(Element itE : elemVec)
+		{
+			itE.print();
+		}
+		
 	}
 	
 	public int createParagraph(String pghName)
 	{
 		Paragraph pghp = new Paragraph(pghName);
-		pghVec.add(pghp);
-		return pghVec.indexOf(pghp);
+		elemVec.add(pghp);
+		return elemVec.indexOf(pghp);
 	}
 	
 	public int createImage(String imgName)
 	{
 		Image img = new Image(imgName);
-		imgVec.add(img);
-		return imgVec.indexOf(img);
+		elemVec.add(img);
+		return elemVec.indexOf(img);
 	}
 	
 	public int createTable(String tableName)
 	{
 		Table tbl = new Table(tableName);
-		tableVec.add(tbl);
-		return tableVec.indexOf(tbl);
+		elemVec.add(tbl);
+		return elemVec.indexOf(tbl);
 	}
 	
 	

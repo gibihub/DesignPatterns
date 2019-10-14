@@ -19,4 +19,8 @@ public Authors(String author) {
 public String toString() {
 	return "Authors [author=" + author + "]";
 }
+
+public void print() {
+	System.out.println("Author:" + this.author);
+}
 }

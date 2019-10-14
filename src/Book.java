@@ -53,8 +53,20 @@ public class Book {
 		
 	}
 	
-	public String toString() {
-		return "Book [title=" + title + "]";
+	public void print()
+	{
+		System.out.println("title of book:" + this.title);
+		System.out.println();
+		for(Chapter it : chVec)
+		{
+			it.print();
+		}
+		System.out.println();
+		
+		for(Authors it2 : authVec)
+		{
+			it2.print() ;
+		}
 	}
 	
 	

@@ -18,10 +18,6 @@ public class Chapter {
 		this.title = title;
 	}
 
-	@Override
-	public String toString() {
-		return "Chapter [title=" + title + "]";
-	};
 	
 	public int createSubChapter(String subchName)
 	{
@@ -35,5 +31,14 @@ public class Chapter {
 		return subchVec.get(indexOfSubChapter);
 	}
 	
+	public void print()
+	{
+		System.out.println("Chapter title: " + this.title);
+		
+		for(SubChapter it : subchVec)
+		{
+			System.out.println("Subch: " + it + " " );
+		}
+	}
 	
 }

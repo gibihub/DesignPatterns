@@ -1,5 +1,5 @@
 
-public class Paragraph {
+public class Paragraph extends Element {
 
 	private String title;
 
@@ -16,9 +16,9 @@ public class Paragraph {
 		this.title = title;
 	}
 
-	@Override
-	public String toString() {
-		return "Paragraph [title=" + title + "]";
+	public void print()
+	{
+		System.out.println("Paragraph: " + this.title);
 	}
 	
 }

@@ -1,5 +1,5 @@
 
-public class Image {
+public class Image extends Element {
 
 	private String title;
 
@@ -16,9 +16,9 @@ public class Image {
 		this.title = title;
 	}
 
-	@Override
-	public String toString() {
-		return "Image [title=" + title + "]";
+	public void print()
+	{
+		System.out.println("ImageName: "+ this.title);
 	}
 	
 }
