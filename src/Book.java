@@ -3,8 +3,8 @@ import java.util.Vector;
 public class Book {
 
 	private String title;
-	private Vector<Chapter> chVec = new Vector<>();
 	private Vector<Authors> authVec = new Vector<>();
+	private Vector<Element> elVec = new Vector<>();
 	public Book(String title) {
 		
 		this.title = title;
@@ -19,20 +19,6 @@ public class Book {
 		this.title = title;
 	}
 
-	public Vector<Chapter> getChVec() {
-		return chVec;
-	}
-
-	public void setChVec(Vector<Chapter> chVec) {
-		this.chVec = chVec;
-	}
-	
-	public int createChapter(String chapterName)
-	{
-		Chapter chp = new Chapter(chapterName);
-		chVec.add(chp);
-		return chVec.indexOf(chp);
-	}
 	
 	public int createAuthor (String authName)
 	{
@@ -46,29 +32,30 @@ public class Book {
 		authVec.add(x);
 	}
 	
-	public Chapter getChapter(int indexofChapter)
-	{	
-		
-		return chVec.get(indexofChapter);
-		
-	}
 	
 	public void print()
 	{
 		System.out.println("title of book:" + this.title);
 		System.out.println();
-		for(Chapter it : chVec)
-		{
-			it.print();
-		}
+
 		System.out.println();
 		
 		for(Authors it2 : authVec)
 		{
 			it2.print() ;
 		}
+		
+		for(Element e : elVec)
+		{
+			e.print();
+		}
 	}
 	
+	public void addContent(Element e)
+	{
+		elVec.add(e);
+	}
+
 	
 	
 	
