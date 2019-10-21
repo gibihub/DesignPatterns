@@ -1,5 +1,5 @@
 
-public class Image extends Element {
+public class Image implements Element {
 
 	private String title;
 

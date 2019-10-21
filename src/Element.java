@@ -1,7 +1,6 @@
 
-public abstract class Element {
+public interface Element {
 
-	public void print() {
-	}
+	public void print() ;
 	
 }

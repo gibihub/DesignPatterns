@@ -1,5 +1,5 @@
 
-public class Paragraph extends Element {
+public class Paragraph implements Element {
 
 	private String title;
 

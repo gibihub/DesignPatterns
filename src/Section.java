@@ -1,6 +1,6 @@
 import java.util.Vector;
 
-public class Section extends Element {
+public class Section implements Element {
 
 	private String sectionTitle;
 	private Vector<Element> elVec = new Vector<>();
@@ -26,9 +26,10 @@ public class Section extends Element {
 		this.sectionTitle = sectionTitle;
 	}
 	
-	public void add(Element x)
-	{
+	public int add(Element x)
+	{	
 		elVec.add(x);
+		return elVec.indexOf(x);
 	}
 	
 	public void remove(Element x)
