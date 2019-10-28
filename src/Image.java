@@ -1,12 +1,16 @@
+import java.util.concurrent.TimeUnit;
 
 public class Image implements Element {
 
 	private String title;
 
-	public Image(String title) {
-		super();
-		this.title = title;
-	}
+	Image(String name) {
+title = name;
+		try {
+		TimeUnit.SECONDS.sleep(5);
+		} catch (InterruptedException e) {
+		e.printStackTrace();
+		}}
 
 	public String getTitle() {
 		return title;

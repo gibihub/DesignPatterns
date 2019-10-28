@@ -1,5 +1,6 @@
 import java.util.Vector;
 
+
 public class Section implements Element {
 
 	private String sectionTitle;
