@@ -131,9 +131,12 @@ public class Main {
 			cap1.add(new Image("ImageTwo"));
 			cap1.add(new Paragraph("Some text"));
 			cap1.add(new Table("Table 1"));
-			BookStatistics stats = new BookStatistics();
+			//BookStatistics stats = new BookStatistics();
+			//cap1.accept(stats);
+			//stats.printStatistics();
+			FinancialBook stats = new FinancialBook();
 			cap1.accept(stats);
-			stats.printStatistics();
+			stats.printFinancialStatistics();
 		
 		
 		

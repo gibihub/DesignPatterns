@@ -56,9 +56,10 @@ public class Section implements Element {
 	@Override
 	public void accept(Visitor visitor) {
 		for(Element e : elVec)
-		{e.accept(visitor);
-		
-		}
+		{
+			e.accept(visitor);
+			}
+		visitor.visit(this);
 		}
 		
 	

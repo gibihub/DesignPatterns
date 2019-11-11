@@ -1,16 +1,18 @@
 
 public class BookStatistics implements Visitor {
 
-	private int imgC ;
-	private int imgP_C;
-	private int pghC ;
-	private int tbC;
+	protected int imgC ;
+	protected int imgP_C;
+	protected int pghC ;
+	protected int tbC;
+	protected int scC;
 	public BookStatistics() {
 		super();
 		this.imgC = 0;
 		this.imgP_C = 0;
 		this.pghC = 0;
 		this.tbC = 0;
+		this.scC = 0;
 	}
 
 	@Override
@@ -43,6 +45,14 @@ this.imgC ++;
 		System.out.println("Nr img: " + this.imgC );
 		System.out.println("NrPgh: "+ this.pghC);
 		System.out.println("NrTbl: "+this.tbC);
+		System.out.println("NrSectiuni: "+this.scC);
+	}
+
+	@Override
+	public void visit(Section sc) {
+	
+		this.scC++;
+		
 	}
 
 	
