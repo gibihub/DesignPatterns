@@ -20,5 +20,10 @@ public class Table implements Element {
 	{
 		System.out.println("Table with title: "+this.title);
 	}
+
+	@Override
+	public void accept(Visitor visitor) {
+		visitor.visit(this);		
+	}
 	
 }

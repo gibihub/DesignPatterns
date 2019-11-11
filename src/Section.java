@@ -53,5 +53,14 @@ public class Section implements Element {
 			e.print();
 		}
 	}
+	@Override
+	public void accept(Visitor visitor) {
+		for(Element e : elVec)
+		{e.accept(visitor);
+		
+		}
+		}
+		
+	
 	
 }
