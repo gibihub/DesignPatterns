@@ -6,6 +6,7 @@ public class BookStatistics implements Visitor {
 	protected int pghC ;
 	protected int tbC;
 	protected int scC;
+	protected int bcC;
 	public BookStatistics() {
 		super();
 		this.imgC = 0;
@@ -53,6 +54,12 @@ this.imgC ++;
 	
 		this.scC++;
 		
+	}
+
+	@Override
+	public void visit(Book book) {
+	
+		bcC++;
 	}
 
 	

@@ -1,6 +1,6 @@
 import java.util.Vector;
 
-public class Book {
+public class Book{
 
 	private String title;
 	private Vector<Authors> authVec = new Vector<>();
@@ -54,6 +54,11 @@ public class Book {
 	public void addContent(Element e)
 	{
 		elVec.add(e);
+	}
+	
+	
+	public void accept(Visitor visitor) {
+		visitor.visit(this);		
 	}
 
 	

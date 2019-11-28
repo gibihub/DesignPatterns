@@ -139,12 +139,19 @@ public static void main(String[] args) {
 //			stats.printFinancialStatistics();
 //		
 	    //// LAB 7 //////////
-	
-	Builder jsonBuilder = new JSONbuilder("src/book.json");
-	jsonBuilder.build();
-	Element myBook = jsonBuilder.getResult();
-	myBook.print();
+//	
+//	Builder jsonBuilder = new JSONbuilder("src/book.json");
+//	jsonBuilder.build();
+//	Element myBook = jsonBuilder.getResult();
+//	myBook.print();
 
+	///////// LAB 8 ///////////
+	Command cmd1 = new OpenCommand("src/book.json");
+	cmd1.execute();
+	Command cmd2 = new StatisticsCommand();
+	cmd2.execute();
+	DocumentManager.getInstance().getBook().print();
+	
 		
 	}
 }
