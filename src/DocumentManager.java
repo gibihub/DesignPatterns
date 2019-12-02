@@ -2,6 +2,8 @@
 public class DocumentManager {
 private static DocumentManager instance = null;
 Book book;
+FirstObserver firstObserver = new FirstObserver();
+SecondObserver secondObserver;
 
 private DocumentManager() {}
 
@@ -21,4 +23,13 @@ public void setBook(Book b)
 {
 	book = b;
 }
+
+public FirstObserver getObserver1()
+{
+	return firstObserver;
 }
+
+
+}
+
+

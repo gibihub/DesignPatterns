@@ -1,14 +1,20 @@
+import java.util.ArrayList;
 import java.util.Vector;
 
 
-public class Section implements Element {
+public class Section implements Element,Observable {
 
 	private String sectionTitle;
 	private Vector<Element> elVec = new Vector<>();
+	
+	private ArrayList<Observer> observersList = new ArrayList<>();
+	private String oldValue;
+	
 	public Section(String sectionTitle, Vector<Element> elVec) {
 		super();
 		this.sectionTitle = sectionTitle;
 		this.elVec = elVec;
+		addObserver(DocumentManager.getInstance().getObserver1());
 	}
 	public String getSectionTitle() {
 		return sectionTitle;
@@ -61,6 +67,38 @@ public class Section implements Element {
 			}
 		visitor.visit(this);
 		}
+	
+	@Override
+	public void setNewValue(String newValue) {
+		
+		
+		oldValue = this.sectionTitle;
+		this.sectionTitle = newValue;
+		notifyObservers();
+		
+	}
+
+	@Override
+	public void addObserver(Observer obs) {
+		observersList.add(obs);
+		
+	}
+
+	@Override
+	public void removeObserver(Observer obs) {
+		observersList.remove(obs);
+		
+	}
+
+	@Override
+	public void notifyObservers() {
+		
+		for(Observer i : observersList)
+		{
+			i.update(oldValue, this.sectionTitle);
+		}
+		
+	}
 		
 	
 	

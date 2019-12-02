@@ -1,11 +1,16 @@
+import java.util.ArrayList;
+import java.util.Vector;
 
-public class Table implements Element {
+public class Table implements Element,Observable {
 
 	private String title;
+	private ArrayList<Observer> observersList = new ArrayList<>();
+	private String oldValue;
 
 	public Table(String title) {
 		super();
 		this.title = title;
+		addObserver(DocumentManager.getInstance().getObserver1());
 	}
 
 	public String getTitle() {
@@ -24,6 +29,38 @@ public class Table implements Element {
 	@Override
 	public void accept(Visitor visitor) {
 		visitor.visit(this);		
+	}
+
+	@Override
+	public void setNewValue(String newValue) {
+		
+		
+		oldValue = this.title;
+		this.title = newValue;
+		notifyObservers();
+		
+	}
+
+	@Override
+	public void addObserver(Observer obs) {
+		observersList.add(obs);
+		
+	}
+
+	@Override
+	public void removeObserver(Observer obs) {
+		observersList.remove(obs);
+		
+	}
+
+	@Override
+	public void notifyObservers() {
+		
+		for(Observer i : observersList)
+		{
+			i.update(oldValue, this.title);
+		}
+		
 	}
 	
 }

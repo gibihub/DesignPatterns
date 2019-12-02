@@ -1,10 +1,12 @@
+import java.util.ArrayList;
 
-public class Paragraph implements Element {
+public class Paragraph implements Element,Observable {
 
 	private String title;
 	private String text;
 	AlignStrategy align;
-	
+	private ArrayList<Observer> observersList = new ArrayList<>();
+	private String oldValue;
 
 	public Paragraph(String title, String text) {
 		super();
@@ -15,6 +17,7 @@ public class Paragraph implements Element {
 	public Paragraph(String title) {
 		super();
 		this.title = title;
+		addObserver(DocumentManager.getInstance().getObserver1());
 	}
 	
 	public void setAlignStrategy(AlignStrategy align)
@@ -48,6 +51,38 @@ public class Paragraph implements Element {
 	public void accept(Visitor visitor) {
 		visitor.visit(this);
 		
+	}
+	
+	public void setNewValue(String newValue) {
+		
+		
+		oldValue = this.title;
+		this.title = newValue;
+		notifyObservers();
+		
+	}
+
+	@Override
+	public void addObserver(Observer obs) {
+		observersList.add(obs);
+		
+	}
+
+	@Override
+	public void removeObserver(Observer obs) {
+		observersList.remove(obs);
+		
+	}
+
+	@Override
+	public void notifyObservers() {
+		
+		for(Observer i : observersList)
+		{
+			i.update(oldValue, this.title);
+		}
+		
+	
 	}
 	
 }
