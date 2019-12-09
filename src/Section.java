@@ -99,6 +99,28 @@ public class Section implements Element,Observable {
 		}
 		
 	}
+	public Element getLastElement()
+	{
+		if(this.elVec.size() > 0)
+		{
+			return this.elVec.get(this.elVec.size() -1 );
+		}
+		else
+		{
+			return null;
+		}
+	}
+	@Override
+	public Element copy() {
+		// TODO Auto-generated method stub
+		Section s = new Section(this.sectionTitle);
+		
+	
+		 this.elVec.forEach(p -> {
+			 s.add(p.copy());
+		 });
+		return s;
+	}
 		
 	
 	

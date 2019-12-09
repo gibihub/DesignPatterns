@@ -25,6 +25,11 @@ public class Paragraph implements Element,Observable {
 		this.align=align;
 		
 	}
+	
+	public Paragraph copy()
+	{
+		return new Paragraph(this.title);
+	}
 
 	public String getTitle() {
 		return title;

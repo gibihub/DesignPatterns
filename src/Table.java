@@ -13,6 +13,11 @@ public class Table implements Element,Observable {
 		addObserver(DocumentManager.getInstance().getObserver1());
 	}
 
+	public Table copy()
+	{
+		return new Table(this.title);
+	}
+	
 	public String getTitle() {
 		return title;
 	}

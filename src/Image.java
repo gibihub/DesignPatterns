@@ -67,4 +67,9 @@ addObserver(DocumentManager.getInstance().getObserver1());
 		
 	}
 	
+	public Image copy()
+	{
+		return new Image(this.title);
+	}
+	
 }

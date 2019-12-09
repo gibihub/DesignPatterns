@@ -35,19 +35,14 @@ public class Book{
 	
 	public void print()
 	{
-		System.out.println("title of book:" + this.title);
-		System.out.println();
-
-		System.out.println();
-		
-		for(Authors it2 : authVec)
-		{
-			it2.print() ;
+		System.out.println("Carte: "+this.title);
+		System.out.println("Autori:");
+		for(int i=0;i<authVec.size();i++) {	
+			authVec.get(i).print();
 		}
-		
-		for(Element e : elVec)
+		for(int i=0;i<elVec.size();i++)
 		{
-			e.print();
+			elVec.get(i).print();
 		}
 	}
 	
@@ -59,6 +54,11 @@ public class Book{
 	
 	public void accept(Visitor visitor) {
 		visitor.visit(this);		
+	}
+	
+	public Element getContent(int index)
+	{
+		return this.elVec.get(index);
 	}
 
 	

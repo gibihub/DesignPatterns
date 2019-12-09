@@ -62,5 +62,10 @@ public void notifyObservers() {
 	
 }
 
+public Element copy() {
+	// TODO Auto-generated method stub
+	return null;
+}
+
 
 }

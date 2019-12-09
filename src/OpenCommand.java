@@ -10,5 +10,10 @@ public OpenCommand(String json) {
 		Book b = new Book("Somthing");
 		b.addContent(jsonBuilder.getResult());
 	}
+	@Override
+	public void unexecute() {
+		// TODO Auto-generated method stub
+		
+	}
 
 }
